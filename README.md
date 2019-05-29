@@ -28,3 +28,11 @@ SOCKS proxy
 SOCKS Proxy Server
 
 localhost    1234`
+
+# edit time
+
+sudo date -s '2017-02-05 15:30:00'
+
+
+
+
