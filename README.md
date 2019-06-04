@@ -33,6 +33,11 @@ localhost    1234`
 
 sudo date -s '2017-02-05 15:30:00'
 
+source ~cmstiming/cmstiming_setup.sh
+
+Location of the VME root files:
+/home/otsdaq/CMSTimingJarvis/2019_04_April_CMSTiming/VME/RecoData/RecoWithTracks
+
 
 
 
