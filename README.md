@@ -39,5 +39,14 @@ Location of the VME root files:
 /home/otsdaq/CMSTimingJarvis/2019_04_April_CMSTiming/VME/RecoData/RecoWithTracks
 
 
+Location of the raw data:
+daq@timingdaq02
+2019_04_April_CMSTiming/TOFHIR/RawData/
+
+
+Location of the TRACK data:
+/home/daq/2019_04_April_CMSTiming/Tracks/
+
+
 
 
