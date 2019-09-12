@@ -50,3 +50,4 @@ Location of the TRACK data:
 
 
 
+root [3] data->Draw("(chtot[384]>000):y_dut:x_dut>>h(100,0,20,100,10,30,2,-0.5,1.5)","ntracks==1","profcolz")

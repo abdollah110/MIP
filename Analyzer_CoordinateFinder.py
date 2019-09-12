@@ -17,15 +17,16 @@ def main(args):
 
 
         L_array=[]
-        for ll in range(128,144):
+        for ll in range(128,136):
             xx= ll-128
-            L=TLine(38+xx*2,25,38+xx*2,35)
+            L=TLine(50+xx*2,35,50+xx*2,45)
             L_array.append(L)
 
         for ll in range(len(L_array)):
             L_array[ll].SetLineWidth(15)
             L_array[ll].SetLineColor(18)
-            if ll+128==ch: L_array[ll].SetLineColor(5)
+            StarChannel= int((ch%128)/2)
+            L_array[StarChannel].SetLineColor(5)
             L_array[ll].Draw()
 
         Tex=TText(40,15,"Channel Number=%d"%ch)
@@ -38,33 +39,33 @@ def main(args):
 
 
     
-    ########################################################
-    # Plots for arrays SiPMs
-    ########################################################
-    for ch in range(128,144):
-        tr.Draw("(chtot[%d]>0):y_dut:x_dut>>h(35,0,70,25,0,50,2,-0.5,1.5)"%ch,"ntracks==1 && x_dut >(%d-128) && x_dut <(%d-122) "%(ch,ch),"profcolz");
-        
-        
-        L_array=[]
-        for ll in range(128,144):
-            xx= ll-128
-            L=TLine(38+xx*2,25,38+xx*2,35)
-            L_array.append(L)
-        
-        for ll in range(len(L_array)):
-            L_array[ll].SetLineWidth(15)
-            L_array[ll].SetLineColor(18)
-            if ll+128==ch: L_array[ll].SetLineColor(5)
-            L_array[ll].Draw()
-    
-        Tex=TText(40,15,"Channel Number=%d"%ch)
-        Tex.Draw()
-        
-        can.SaveAs("Out_arrays_cutted%d.pdf"%ch);
+#    ########################################################
+#    # Plots for arrays SiPMs
+#    ########################################################
+#    for ch in range(128,144):
+#        tr.Draw("(chtot[%d]>0):y_dut:x_dut>>h(35,0,70,25,0,50,2,-0.5,1.5)"%ch,"ntracks==1 && x_dut >(%d-128) && x_dut <(%d-122) "%(ch,ch),"profcolz");
+#
+#
+#        L_array=[]
+#        for ll in range(128,144):
+#            xx= ll-128
+#            L=TLine(38+xx*2,25,38+xx*2,35)
+#            L_array.append(L)
+#
+#        for ll in range(len(L_array)):
+#            L_array[ll].SetLineWidth(15)
+#            L_array[ll].SetLineColor(18)
+#            if ll+128==ch: L_array[ll].SetLineColor(5)
+#            L_array[ll].Draw()
+#
+#        Tex=TText(40,15,"Channel Number=%d"%ch)
+#        Tex.Draw()
+#
+#        can.SaveAs("Out_arrays_cutted%d.pdf"%ch);
+#
+#
+#    SingleCh=[0,1,14,15]
 
-
-    SingleCh=[0,1,14,15]
-    
     ########################################################
     # Plots for single SiPMs
     ########################################################
