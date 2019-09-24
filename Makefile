@@ -8,24 +8,22 @@ CPPFLAGS := $(shell root-config --cflags) -I$(INC)/include
 LDFLAGS := $(shell root-config --glibs)
 CPPFLAGS += -g -std=c++1y
 
-TARGET = MeanCalculation
-SRC = MeanCalculation.cc
+TARGET = ConvertTOFPETSinglesToEvents
+SRC = ConvertTOFPETSinglesToEvents.cc
 OBJ = $(SRC:.cc=.o)
 
 
 
-all : $(TARGET) 
+all : $(TARGET)
 
 $(TARGET) : $(OBJ)
-	@echo $@
-	$(LD) $(CPPFLAGS) -o $(TARGET) $(OBJ) $(LDFLAGS)
+        @echo $@
+        $(LD) $(CPPFLAGS) -o $(TARGET) $(OBJ) $(LDFLAGS)
+
+
 
 %.o : %.cc
-	@echo $@
-	$(CXX) $(CPPFLAGS) -o $@ -c $<
+        @echo $@
+        $(CXX) $(CPPFLAGS) -o $@ -c $<
 clean :
-	rm -f *.o $(TARGET) *~
-
-
-
-
+        rm -f *.o $(TARGET) *~
